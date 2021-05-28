@@ -262,15 +262,8 @@ for d in glob.glob(INPUT_DIR + '/*/'):
                 mask_ = mask_ * error
                 coarse_masks.append(mask_)
             
-            print("========================================================")
-            print("len(coarse_masks) != len(files)")
-            print(len(coarse_masks))
-            print(len(files))
-            print("========================================================")
-            
             # refine results
             for i in range(SEQ_LENGTH, len(files)+1, STEPSIZE):
-                print(i)
                 imgnum = str(ct).zfill(10)
                 if os.path.exists(OUTPUT_DIR + seqname + '/' + imgnum + '-fseg.png'):
                     ct+=1
